@@ -5,7 +5,8 @@ const countAnimals = (options = {}) => {
     const species = data.species.find((species) => species.name === options.species);
     if (species) {
       if (options.sex) {
-        const filteredResidents = species.residents.filter((resident) => resident.sex === options.sex);
+        const filteredResidents = species.residents.filter((resident) =>
+          resident.sex === options.sex);
         return filteredResidents.length;
       }
       return species.residents.length;
@@ -20,9 +21,5 @@ const countAnimals = (options = {}) => {
 
   return animalCounts;
 };
-
-module.exports = countAnimals;
-
-console.log(countAnimals('lions', 'male'));
 
 module.exports = countAnimals;
